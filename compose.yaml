@@ -1,0 +1,25 @@
+services: 
+  mysql: 
+    image: mysql:8.4 
+    container_name: aula-mysql 
+    environment: 
+      MYSQL_ROOT_PASSWORD: root_password 
+      MYSQL_DATABASE: aula_db 
+    ports: 
+      - "3306:3306" 
+    volumes: 
+      - mysql-data:/var/lib/mysql 
+ 
+  phpmyadmin: 
+    image: phpmyadmin:latest 
+    container_name: aula-phpmyadmin 
+    environment: 
+      PMA_HOST: mysql 
+      PMA_PORT: 3306 
+    ports: 
+      - "8080:80" 
+    depends_on: 
+      - mysql 
+ 
+volumes: 
+  mysql-data: 
