@@ -1,0 +1,1 @@
+Olá! Esta imagem Docker foi criada na aula de Integração e Entrega Contínua. 
